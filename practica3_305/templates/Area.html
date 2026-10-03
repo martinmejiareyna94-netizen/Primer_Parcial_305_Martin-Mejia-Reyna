@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" 
+    href="{{ url_for('static', filename='css/estilos.css') }}">
+    <title>Calcular Area</title>
+</head>
+<body>
+    <h1>Calcular Area de un Rectangulo</h1>
+    <nav class="menu">
+        <a href="/Area">Area</a>
+        <a href="/Perimetro">Perimetro</a>
+    </nav>
+
+    <form method="POST">
+        <p>
+            Largo: <input type="number" name="largo" required>
+        </p>
+        <p>
+            Ancho: <input type="number" name="ancho" required>
+        </p>
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if area is not none %}
+        <p>El area es: {{ area }}</p>
+    {% endif %}
+</body>
+</html>
